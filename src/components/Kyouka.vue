@@ -14,7 +14,7 @@
       ></popup-picker>
     </group>
     <group title="查询内容">
-      <x-input v-model="selectData" placeholder @on-change="onChange" :keyboard="keyMode"></x-input>
+      <x-input v-model="selectData" placeholder="请输入内容，支持正则表达式" @on-change="onChange" :keyboard="keyMode"></x-input>
     </group>
     <div style="margin-top:15px">
       <flexbox>
@@ -87,7 +87,7 @@ export default {
     lineselect() {
       this.$router.push({
         name: "KyoukaData",
-        params: { type: 0, data: this.selectData }
+        params: { type: 'line', data: this.selectData }
       });
     }
   }

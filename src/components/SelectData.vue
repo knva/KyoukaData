@@ -83,7 +83,7 @@ export default {
     }
     this.selType = this.$route.params.type;
     this.selectData = this.$route.params.data;
-    if (this.selType == 0) {
+    if (this.selType == "line") {
       this.lineSelxx();
     } else {
       if (this.selectData == "") {
@@ -139,6 +139,10 @@ export default {
             text: "参数错误",
             type: "text"
           });
+          setTimeout(() => {
+            this.$router.push("/");
+          }, 500);
+             
         }
         allsel(apiName + query, params).then(res => {
           this.rows = res.data;
